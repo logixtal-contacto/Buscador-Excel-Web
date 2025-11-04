@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscador Excel (Admin / Usuario)</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 flex flex-col items-center p-6">
+
+  <h1 id="titulo" class="text-2xl font-bold mb-6">Buscador de Información</h1>
+
+  <!-- Panel del Administrador -->
+  <div id="adminPanel" class="hidden flex flex-col items-center mb-6">
+    <h2 class="text-xl font-semibold mb-2">Panel de Administrador</h2>
+    <input type="file" id="inputExcel" accept=".xlsx" class="border p-2 rounded bg-white mb-4" />
+    <button id="btnGuardar" class="bg-blue-600 text-white px-4 py-2 rounded">Guardar Base</button>
+    <p class="text-sm text-gray-500 mt-2 text-center">El archivo se guarda localmente en tu navegador (localStorage).</p>
+  </div>
+
+  <!-- Buscador -->
+  <div id="buscadorPanel" class="flex flex-col items-center w-full max-w-3xl">
+    <input type="text" id="inputBuscar" placeholder="Buscar..." 
+           class="border p-2 rounded w-full mb-4 shadow" />
+
+    <table id="tablaResultados" class="table-auto bg-white border border-gray-300 shadow w-full hidden">
+      <thead class="bg-gray-200"></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="xlsx.full.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
